@@ -1,67 +1,72 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather Dashboard</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="container">
-        <div class="header">
-            <h1>🌤️ Weather Dashboard</h1>
-            <p>your real time weather companion</p>
-        </div>
-        <div class="search-box">
-            <input type="text" id="cityInput" placeholder="enter name..." value="India">
-            <button onclick="searchWeather()">Search</button>
-        </div>
-        <div id="errorMsg" class="error" style="display: none;"></div>
-        <div id="loading" class="loading" style="display: none;">Loading weather data..</div>
-        <div id="weatherContent" style="display: none;">
-            <div class="current-weather">
-                <div class="current-weather-header">
-                    <div>
-                        <div class="location" id="location">------</div>
-                        <div class="date" id="date">----</div>
-                    </div>
-                </div>
-                <div class="current-main">
-                    <div class="weather-icon" id="currentIcon">☀️</div>
-                    <div class="temp-info">
-                        <div class="temperature" id="temperature">----</div>
-                        <div class="description" id="description">----</div>
-                    </div>
-                </div>
-                <div class="weather-details">
-                    <div class="daily-item">
-                        <div class="label">Feels Like</div>
-                        <div class="value" id="FeelsLike">----</div>
-                    </div>
-                </div>
-                <div class="daily-item">
-                    <div class="label">Humidity</div>
-                    <div class="value" id="humidity">----</div>
-                </div>
-                <div class="daily-item">
-                    <div class="label">Speed</div>
-                    <div class="value" id="windSpeed">----</div>
-                </div>
-                <div class="daily-item">
-                    <div class="label">Pressure</div>
-                    <div class="value" id="pressure">----</div>
-                </div>
-            </div>
-        </div>
-        <div class="forecast-section">
-            <h2>Hourly Forecast</h2>
-            <div class="hourly-forecast" id="hourlyForecast"></div>
-        </div>
-        <div class="forecast-section">
-            <h2>Daily Forecast</h2>
-            <div class="daily-forecast" id="dailyForecast"></div>
-        </div>
-        </div>
-    </div>
-</body>
-</html>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  padding: 20px;
+  columns: #333;
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  color: white;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.search-box {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+  justify-content: center;
+}
+
+.search-box input {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 25px;
+  width: 300px;
+  font-size: 16px;
+  outline: none;
+}
+
+.search-box button {
+  padding: 12px 30px;
+  border: none;
+  border-radius: 25px;
+  background: #4caf50;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.search-box button:hover {
+  background: #45a049;
+}
+.current-weather {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0.2);
+}
+
+.current-weather-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
